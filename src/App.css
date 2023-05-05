@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App {
+  text-align: center;
+  height: 100vh;
+  background-color: green;
+}
+
+.dCards {
+  display: flex;
+  justify-content: center;
+}
+.pCards {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+}
+
+.cardImg {
+  width: 300px;
+  height: 350px;
+}
+
+.playGround {
+  display: flex;
+  justify-content: center;
+}
+
+.hitOrStand {
+  margin-top: 15px;
+  height: 50px;
+  width: 90%;
+  background-color: black;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 20px;
+}
+
+.playGroundBtn {
+  margin-top: 15px;
+}
+
+button {
+  width: 200px;
+  height: 50px;
+  background-color: black;
+  color: #fff;
+  border: 3px solid #fff;
+  border-radius: 10px;
+}
