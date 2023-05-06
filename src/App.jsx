@@ -9,7 +9,9 @@ function App() {
   const [playerCards, setPlayerCards] = useState([]);
   const [myGame, setMygame] = useState({});
   const [winner, setWinner] = useState('');
+  const [hidden, setHidden] = useState('');
   console.log(myGame);
+  console.log(hidden);
 
   const allCard = [
     '2C',
@@ -68,16 +70,14 @@ function App() {
 
   useEffect(() => {
     const game = new Blackjack();
-    console.log(game);
     setMygame(game);
+    console.log(game);
   }, []);
 
   const handleRestart = () => {
-    setMygame({});
-    console.log(myGame);
-    const game = new Blackjack();
-    console.log(game);
-    setMygame(game);
+    // const game = new Blackjack();
+    // setMygame(game);
+    document.location.reload();
   };
 
   const handleStartGame = () => {
@@ -116,6 +116,13 @@ function App() {
     }
     setDealerCards(dealerInter());
     setPlayerCards(playerInner());
+
+    function hiddenCard() {
+      let hCard = [myGame.hidden.value + myGame.hidden.type];
+      setHidden(hCard);
+      return hCard;
+    }
+    hiddenCard();
   };
 
   const handleHit = () => {
@@ -171,7 +178,7 @@ function App() {
         {dealerCards.length
           ? dealerCards.map((el, index) => (
               <div className="card">
-                <img src={`/Cards/${el}.svg`} className="cardImg" />
+                <img src={`/cardsss/${el}.svg`} className="cardImg" />
               </div>
             ))
           : null}
@@ -181,7 +188,7 @@ function App() {
         {playerCards.length
           ? playerCards.map((el) => (
               <div className="card">
-                <img src={`/Cards/${el}.svg`} className="cardImg" />
+                <img src={`/cardsss/${el}.svg`} className="cardImg" />
               </div>
             ))
           : null}
